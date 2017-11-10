@@ -11,6 +11,33 @@ var auto = 0
 var pps = 0
     var textField = document.getElementById( "textField" );
     var currentValue = parseInt(textField.value);
+function save() {
+	 var textField = document.getElementById( "textField" );
+    var currentValue = parseInt(textField.value);
+	setCookie('add', add);
+	setCookie('ppc', ppc);
+	setCookie('cost', cost);
+	setCookie('cost2', cost2);
+	setCookie('auto', auto);
+	setCookie('pps', pps);
+	setCookie('currentValue', currentValue);
+}
+function load() {
+	 var textField = document.getElementById( "textField" );
+    var currentValue = parseInt(textField.value);
+	add = getCookie('add');
+	ppc = getCookie('ppc');
+	cost = getCookie('cost');
+	cost2 = getCookie('cost2');
+	auto = getCookie('auto');
+	pps = getCookie('pps')
+	currentValue = getCookie('currentValue', currentValue);
+	document.getElementById("ppc").value="ppc: " +ppc; 
+document.getElementById("upgrade").value="upgrade button: " + cost + " points";
+	document.getElementById("upgradeauto").value="upgrade auto click: " + cost2 + " points"; 
+document.getElementById("pps").value="pps: " +pps;
+	textField.value = currentValue;	
+}
 	function handleButtonClick4() {
 	if (auto > 0) {
 	setTimeout(handleButtonClick2(), 1000)
@@ -169,6 +196,8 @@ setTimeout(handleButtonClick2, 1000)
 <br>
 <input type="text" value="pps: 0" id="pps" readonly/>
 <br>
+<input type="button" id="save" onClick="save()" value="save">
 <br>
+<input type="button" id="load" onClick="load()" value="load">
 </body>
 </html>
